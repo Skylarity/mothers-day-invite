@@ -1,0 +1,28 @@
+div[id^="layer"] {
+	position: fixed;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	top: 0;
+	left: 0;
+	width: 100vw;
+	height: 100vh;
+
+	text-align: center;
+	font-size: 4rem;
+
+	cursor: pointer;
+
+	transition: 1s all;
+
+	span {
+		display: inline-block;
+		padding-top: 1rem;
+		font-size: 0.5em;
+		color: rgba(#000, 0.5);
+	}
+}
+
+.offscreen {
+	left: -100vw !important;
+}
