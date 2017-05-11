@@ -16,13 +16,14 @@ details.forEach(function(detail, i) {
 		"id": 'layer' + i,
 		"style": 'background: ' + detail.color
 	})
-	el.html(detail.text + "<span>(Click to continue...)</span>")
-	el.click(function() {
-		console.log('Clicked!')
-		if (i < details.length - 1) {
+	var notLast = i < details.length - 1
+	el.html(detail.text + (notLast ? "<span>(Click to continue...)</span>" : ""))
+	if (notLast) {
+		el.addClass('clickable')
+		el.click(function() {
 			$(this).addClass('offscreen')
-		}
-	})
+		})
+	}
 	elsToAppend.push(el)
 })
 container.append(elsToAppend.reverse())

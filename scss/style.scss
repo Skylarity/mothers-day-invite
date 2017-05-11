@@ -11,9 +11,11 @@ div[id^="layer"] {
 	text-align: center;
 	font-size: 4rem;
 
-	cursor: pointer;
-
 	transition: 1s all;
+
+	&.clickable {
+		cursor: pointer;
+	}
 
 	span {
 		display: inline-block;
