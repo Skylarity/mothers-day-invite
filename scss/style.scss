@@ -1,3 +1,6 @@
+$main-font: 'Sacramento', serif;
+$second-font: 'Sue Ellen Francisco', sans-serif;
+
 div[id^="layer"] {
 	position: fixed;
 	display: flex;
@@ -8,8 +11,10 @@ div[id^="layer"] {
 	width: 100vw;
 	height: 100vh;
 
+	font-family: $main-font;
 	text-align: center;
 	font-size: 4rem;
+	color: rgba(#222, .9);
 
 	transition: 1s all;
 
@@ -20,11 +25,44 @@ div[id^="layer"] {
 	span {
 		display: inline-block;
 		padding-top: 1rem;
+
+		font-family: $second-font;
 		font-size: 0.5em;
-		color: rgba(#000, 0.5);
+		color: rgba(#222, 0.75);
+
+		&.click {
+			color: rgba(#222, 0.5);
+		}
 	}
 }
 
 .offscreen {
 	left: -100vw !important;
+}
+
+.start-over {
+	display: block;
+	margin: 0 auto;
+	padding: 4px;
+
+	font-family: $second-font;
+	font-size: 0.5em;
+	color: rgba(#222, 0.75);
+
+	background: rgba(#222, 0);
+
+	border: 2px solid;
+	border-radius: 4px;
+
+	cursor: pointer;
+
+	transition: all 0.3s;
+
+	&:hover {
+		background: rgba(#222, 0.25);
+	}
+
+	&:focus {
+		outline: none;
+	}
 }
